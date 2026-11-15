@@ -1,0 +1,16 @@
+name: ci
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pack smoke
+        run: |
+          make pack
+          test -f dist/*-linux-amd64.tar.gz
+          ( cd dist && sha256sum -c SHA256SUMS --quiet )

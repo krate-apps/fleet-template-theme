@@ -1,0 +1,8 @@
+schema: 1
+id: org.example.theme.template
+name: Template Theme
+description: Minimal Fleet appearance pack (copy and rename for a new theme).
+version: 0.1.0
+colorScheme: dark
+css: theme.css
+uiThemeId: template
